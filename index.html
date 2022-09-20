@@ -3,10 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week Planner</title>
+  <link rel="icon" href="none.png">
+  <title>None* Game</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <script src="main.js"></script>
+  <div class="container">
+    <div class="row">
+      <div class="column-full center">
+        <h1 class="question"> 1 + 1 </h1>
+        <form class="question-form">
+          <label for="user-name"></label>
+          <input class="user-input" required autocomplete="off" autofocus name="input" type="text" id="user-name">
+          <div class="solve-button">
+            <button type="submit">solve</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div>
+    <script src="questions.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
