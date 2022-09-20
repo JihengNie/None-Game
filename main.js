@@ -1,13 +1,20 @@
 var $formSelector = document.querySelector('.question-form');
 var $question = document.querySelector('.question');
+var $resetButton = document.querySelector('.reset-button');
+var previousQuestionNumber = localStorage.getItem('None-Question-Number-local-storage');
 var counter = 0;
 
 window.addEventListener('beforeunload', storingQuestionNumber);
 $formSelector.addEventListener('submit', formSubmited);
+$resetButton.addEventListener('click', resetGame);
 
-var previousQuestionNumber = localStorage.getItem('None-Question-Number-local-storage');
 if (previousQuestionNumber) {
   counter = JSON.parse(previousQuestionNumber);
+  $question.textContent = questionArray[counter];
+}
+
+function resetGame(event) {
+  counter = 0;
   $question.textContent = questionArray[counter];
 }
 
