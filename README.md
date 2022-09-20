@@ -1,3 +1,3 @@
-# week-planner
+# None* Game
 
-A dynamic HTML, CSS, and JavaScript week planner app.
+An interactive puzzle game.
