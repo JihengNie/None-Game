@@ -17,14 +17,24 @@
           <input class="user-input" required autocomplete="off" autofocus name="input" type="text" id="user-name">
           <div class="solve-button">
             <button class="reset-button" type="button">Reset</button>
+            <button class="hint-button" type="button">Hint</button>
             <button type="submit">solve</button>
           </div>
         </form>
       </div>
     </div>
   </div>
-  <div>
-    <script src="questions.js"></script>
-    <script src="main.js"></script>
+  <div class="modal-background-container hidden">
+    <div class="modal-container">
+      <h1 class="hints"> Hey Common now, you got this :-) </h1>
+      <div class="center">
+        <button class="close-hints" type="button">Close Hints</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
