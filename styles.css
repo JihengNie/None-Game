@@ -2,6 +2,27 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.modal-background-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+
 body {
   background-color: black;
   font-family: Gugi, cursive;
