@@ -39,6 +39,8 @@ function givingHints(event) {
 function resetGame(event) {
   counter = 0;
   $question.textContent = allQuestions[counter].question;
+  attempts = 0;
+  $attemptTracker.textContent = 'Count: ' + attempts;
   $formSelector.reset();
 }
 
