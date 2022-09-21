@@ -13,9 +13,10 @@ $formSelector.addEventListener('submit', formSubmited);
 $resetButton.addEventListener('click', resetGame);
 $hintsButton.addEventListener('click', givingHints);
 $hintCloseButton.addEventListener('click', closingHints);
+
 if (previousQuestionNumber) {
   counter = JSON.parse(previousQuestionNumber);
-  $question.textContent = questionArray[counter];
+  $question.textContent = allQuestions[counter].question;
 }
 
 function closingHints(event) {
@@ -23,23 +24,23 @@ function closingHints(event) {
 }
 
 function givingHints(event) {
-  $hintText.textContent = hintsArray[counter];
+  $hintText.textContent = allQuestions[counter].hint;
   $hintContainer.className = 'modal-background-container';
 }
 
 function resetGame(event) {
   counter = 0;
-  $question.textContent = questionArray[counter];
+  $question.textContent = allQuestions[counter].question;
 }
 
 function formSubmited(event) {
   event.preventDefault();
-  if (removeSpaces($formSelector.elements.input.value.toLocaleLowerCase()) === removeSpaces(answeArray[counter].toLocaleLowerCase())) {
+  if (checkIfInArray(formatComparision($formSelector.elements.input.value), allQuestions[counter].answer)) {
     counter++;
-    if (counter === questionArray.length) {
+    if (counter === allQuestions.length) {
       $question.textContent = 'Game Over';
     } else {
-      $question.textContent = questionArray[counter];
+      $question.textContent = allQuestions[counter].question;
     }
   }
   $formSelector.reset();
@@ -58,4 +59,18 @@ function removeSpaces(string) {
     }
   }
   return result;
+}
+
+function checkIfInArray(item, array) {
+  for (var i = 0; i < array.length; i++) {
+    if (item === array[i].toLocaleLowerCase()) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function formatComparision(input) {
+  input = removeSpaces(input.toLocaleLowerCase());
+  return input;
 }
