@@ -20,6 +20,9 @@ $hintCloseButton.addEventListener('click', closingHints);
 if (previousQuestionNumber) {
   counter = JSON.parse(previousQuestionNumber);
   attempts = JSON.parse(previousUserAttempts);
+  if (attempts === null) {
+    attempts = 0;
+  }
   $question.textContent = allQuestions[counter].question;
   $attemptTracker.textContent = 'Count: ' + attempts;
 }
@@ -36,6 +39,7 @@ function givingHints(event) {
 function resetGame(event) {
   counter = 0;
   $question.textContent = allQuestions[counter].question;
+  $formSelector.reset();
 }
 
 function formSubmited(event) {
