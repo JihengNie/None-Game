@@ -1,3 +1,3 @@
 # None* Game
 
-An interactive puzzle game based on the game None*
+An interactive web application that recreated the puzzle game None*
